@@ -1,0 +1,38 @@
+.sea {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25vw;
+  height: 25vw;
+  transform-style: preserve-3d;
+  transform: rotateX(70deg) rotateZ(35deg);
+  will-change: transform;
+}
+
+.wave {
+  filter: blur(0.1vw);
+  width: 2.5vw;
+  height: 2.5vw;
+  background: green;
+  transform: translateZ(0px) rotateX(90deg);
+  transform-origin: top;
+  margin: -22px 3px;
+  animation: wave 1s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i, 0) * 0.014s);
+  opacity: 0.7;
+  border-radius: 0 0 2px 2px;
+  will-change: height;
+}
+
+.wave.flash {
+  background: #95e208;
+  box-shadow: 0 0 8px #95e208;
+}
+
+@keyframes wave {
+  from {
+    height: 8px;
+  }
+  to {
+    height: 40px;
+  }
+}
